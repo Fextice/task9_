@@ -1,0 +1,15 @@
+#!/bin/bash
+
+cd "$(dirname "$(readlink -f "$0")")"  # "
+
+
+M2_HOME=~/.m2
+CP=$M2_HOME/repository/com/intellij/forms_rt/7.0.3/forms_rt-7.0.3.jar\
+:$M2_HOME/repository/asm/asm-commons/3.0/asm-commons-3.0.jar\
+:$M2_HOME/repository/asm/asm-tree/3.0/asm-tree-3.0.jar\
+:$M2_HOME/repository/asm/asm/3.0/asm-3.0.jar\
+:$M2_HOME/repository/com/jgoodies/forms/1.1-preview/forms-1.1-preview.jar\
+:$M2_HOME/repository/jdom/jdom/1.0/jdom-1.0.jar
+
+
+java -classpath "./out/production/Arr2JTableDemo:$CP" ru.vsu.cs.course1.Program "$@"
